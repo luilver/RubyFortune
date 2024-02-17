@@ -16,6 +16,7 @@ gem 'psych', '5.1.2'
 gem 'puma'
 
 gem 'rack'
+gem 'rackup'
 gem 'rake'
 
 group :development do
