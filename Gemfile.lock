@@ -76,7 +76,7 @@ GEM
       method_source (~> 1.0)
     psych (5.1.2)
       stringio
-    puma (6.4.0)
+    puma (6.4.2)
       nio4r (~> 2.0)
     rack (3.0.9)
     rack-accept (0.4.5)
@@ -111,8 +111,8 @@ DEPENDENCIES
   grape-swagger
   grape-swagger-entity
   pry
-  psych (= 5.1.2)
-  puma
+  psych (~> 5.1.0)
+  puma (~> 6.4.0)
   rack
   rackup
   rake

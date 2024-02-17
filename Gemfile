@@ -12,8 +12,8 @@ gem 'grape-entity'
 gem 'grape-swagger'
 gem 'grape-swagger-entity'
 
-gem 'psych', '5.1.2'
-gem 'puma'
+gem 'psych', '~> 5.1.0'
+gem 'puma', '~> 6.4.0'
 
 gem 'rack'
 gem 'rackup'
