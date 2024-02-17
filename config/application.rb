@@ -23,9 +23,9 @@ begin
     raise "Could not load database configuration. No such file - #{yaml}"
   end
 rescue Psych::SyntaxError => e
-  raise "YAML syntax error occurred while parsing #{paths['config/database'].first}. " \
-        'Please note that YAML must be consistently indented using spaces. Tabs are not allowed. ' \
-        "Error: #{e.message}"
+  raise 'YAML syntax error occurred while parsing config/database. ' \
+        'Please note that YAML must be consistently indented using spaces. ' \
+        "Tabs are not allowed. Error: #{e.message}"
 end
 
 env = ENV['RACK_ENV'] || 'development'
