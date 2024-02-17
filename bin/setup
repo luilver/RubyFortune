@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require 'fileutils'
+
+# path to your application root.
+APP_ROOT = File.expand_path('..', __dir__)
+
+# database file
+db_file = 'config/database.yml'
+
+def system!(*args)
+  system(*args, exception: true)
+end
+
+FileUtils.chdir APP_ROOT do
+  # This script is idempotent, so that you can run it at any time and get an
+  # expectable outcome.
+
+  puts '== Installing dependencies =='
+  system! 'gem install bundler --conservative'
+  system('bundle check') || system!('bundle install')
+
+  puts "\n== Copying sample files =="
+  FileUtils.cp "#{db_file}.sample", db_file unless File.exist?(db_file)
+
+  puts "\n== Preparing database =="
+  system('rake db:migrate')
+end
