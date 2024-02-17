@@ -2,10 +2,12 @@
 
 ## Setup
 
-```
-./bin/setup
+```bash
+docker build . -t rubyforms
 ```
 
 ## Run
 
-rackup
+```bash
+docker run -p 9292:9292 rubyforms
+```
