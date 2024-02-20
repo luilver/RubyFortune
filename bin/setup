@@ -25,6 +25,7 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Copying sample files =="
   FileUtils.cp "#{db_file}.sample", db_file unless File.exist?(db_file)
 
-  puts "\n== Preparing database =="
+  puts "\n== Preparing databases =="
   system('rake db:migrate')
+  system('RACK_ENV=test rake db:migrate')
 end
