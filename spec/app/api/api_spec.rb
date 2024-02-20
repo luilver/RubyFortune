@@ -17,7 +17,7 @@ describe RubyForms::API do
       it { expect(last_response.status).to eq(200) }
 
       it 'exposes api version' do
-        expect(@json[:info][:version]).to eq('0.0.1')
+        expect(@json[:info][:version]).to eq('0.0.2')
       end
 
       it 'exposes polls api path' do

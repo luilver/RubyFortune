@@ -5,14 +5,16 @@ The format is based on [Keep a Changelog][], and this project adheres to
 [Semantic Versioning][].
 
 ## [Unreleased]
-- Docker
 - Overcommit
-- Renovate
-- Rspec Suite
 - Rubocop
 - SimplCov
 - Watchdog
 
+## [Version 0.0.2]
+- Database Cleaner
+- Docker
+- Renovate
+- Rspec Suite
 
 ## [Version 0.0.1]
 - Grape API
