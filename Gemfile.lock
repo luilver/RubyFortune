@@ -24,6 +24,11 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
+    diff-lcs (1.5.1)
     drb (2.2.0)
       ruby2_keywords
     dry-core (1.0.1)
@@ -43,6 +48,10 @@ GEM
       zeitwerk (~> 2.6)
     erb (4.0.4)
       cgi (>= 0.3.3)
+    factory_bot (6.4.6)
+      activesupport (>= 5.0.0)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     grape (2.0.0)
       activesupport (>= 5)
       builder
@@ -87,6 +96,19 @@ GEM
       rack (>= 3)
       webrick (~> 1.8)
     rake (13.1.0)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.0)
     ruby2_keywords (0.0.5)
     sqlite3 (1.7.2)
       mini_portile2 (~> 2.8.0)
@@ -105,7 +127,10 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  database_cleaner-active_record
   erb
+  factory_bot
+  faker
   grape
   grape-entity
   grape-swagger
@@ -116,6 +141,7 @@ DEPENDENCIES
   rack
   rackup
   rake
+  rspec
   sqlite3
 
 BUNDLED WITH

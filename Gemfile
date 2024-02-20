@@ -23,3 +23,10 @@ group :development do
   gem 'pry'
   gem 'sqlite3'
 end
+
+group :test do
+  gem 'database_cleaner-active_record'
+  gem 'factory_bot'
+  gem 'faker'
+  gem 'rspec'
+end

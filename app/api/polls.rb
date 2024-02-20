@@ -3,21 +3,21 @@
 module RubyForms
   # Base Resource
   class Polls < Grape::API
-    resource :forms do
-      desc 'Returns basic form details'
-      get '/polls' do
+    resource :polls do
+      desc 'returns polls details'
+      get do
         polls = ::Poll.all
         present polls, with: RubyForms::Entities::Poll, with_options: true
       end
 
-      desc 'Create a basic poll'
+      desc 'create a poll'
       params do
-        requires :title, type: String, desc: 'Title of the poll'
-        requires :options, type: Array[String], desc: 'Options for the poll'
+        requires :title, type: String, desc: 'title of the poll'
+        optional :options, type: Array[String], desc: 'options for the poll'
       end
-      post '/poll' do
-        poll = ::Poll.new({ title: params[:title], options: params[:options] })
-        present poll, with: Entities::PollEntity
+      post do
+        poll = ::Poll.create(title: params[:title])
+        present poll, with: RubyForms::Entities::Poll
       end
     end
   end
