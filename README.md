@@ -11,3 +11,9 @@ docker build . -t rubyforms
 ```bash
 docker run -p 9292:9292 rubyforms
 ```
+
+## Tests
+
+```bash
+docker run -it rubyforms rake
+```
