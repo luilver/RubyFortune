@@ -25,7 +25,7 @@ module RubyForms
     end
 
     def call(env)
-      response = Acme::API.call(env)
+      response = RubyForms::API.call(env)
 
       # Serve error pages or respond with API response
       case response[0]

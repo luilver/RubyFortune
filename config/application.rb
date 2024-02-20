@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'api'))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'app'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'boot'
-Bundler.require :default, ENV.fetch('RACK_ENV', 'development')
+Bundler.require :default, ENV.fetch('RACK_ENV', nil)
 
 require 'active_record'
 Dir[File.expand_path('../app/**/*.rb', __dir__)].each { |f| require f }
@@ -31,5 +30,5 @@ end
 env = ENV['RACK_ENV'] || 'development'
 adapter = config[env][:adapter]
 database = config[env][:database]
-db_options = { adapter: adapter, database: database }
-ActiveRecord::Base.establish_connection(db_options)
+db_options = { adapter:, database: }
+config[:connection] = ActiveRecord::Base.establish_connection(db_options)
