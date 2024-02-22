@@ -29,4 +29,8 @@ group :test do
   gem 'factory_bot'
   gem 'faker'
   gem 'rspec'
+  gem 'rubocop'
+  gem 'rubocop-factory_bot'
+  gem 'rubocop-rake'
+  gem 'rubocop-rspec'
 end

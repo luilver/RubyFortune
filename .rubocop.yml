@@ -1,0 +1,26 @@
+require:
+  - rubocop-factory_bot
+  - rubocop-rake
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'app/ruby_forms.rb'
+    - 'db/migrate/0_create_polls.rb'
+    - 'db/migrate/1_create_options.rb'
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'db/migrate/0_create_polls.rb'
+    - 'db/migrate/1_create_options.rb'
+    - 'lib/tasks/database.rake'
+    - 'lib/tasks/routes.rake'

@@ -16,4 +16,7 @@ end
 
 Rake.add_rakelib 'lib/tasks'
 
-task default: %i[spec]
+require 'rubocop/rake_task'
+RuboCop::RakeTask.new(:rubocop)
+
+task default: %i[rubocop spec]
