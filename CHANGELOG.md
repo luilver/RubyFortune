@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog][], and this project adheres to
 [Semantic Versioning][].
 
 ## [Unreleased]
+- Posthog
+
+## [Version 0.0.3]
 - Overcommit
 - Rubocop
-- SimplCov
-- Watchdog
+- SimpleCov
 
 ## [Version 0.0.2]
 - Database Cleaner
