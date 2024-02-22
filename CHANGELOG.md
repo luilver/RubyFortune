@@ -5,7 +5,10 @@ The format is based on [Keep a Changelog][], and this project adheres to
 [Semantic Versioning][].
 
 ## [Unreleased]
-- Posthog
+### Add
+- Posthog support
+### Remove
+- app scope under spec dir
 
 ## [Version 0.0.3]
 - Overcommit

@@ -6,7 +6,7 @@ module RubyForms
     prefix 'api'
     format :json
 
-    mount ::RubyForms::Polls
+    mount ::RubyForms::Poll
 
     add_swagger_documentation api_version: 'v1',
                               doc_version: '0.0.3',

@@ -2,7 +2,7 @@
 
 module RubyForms
   # Base Resource
-  class Polls < Grape::API
+  class Poll < Grape::API
     resource :polls do
       desc 'returns polls details'
       get do
