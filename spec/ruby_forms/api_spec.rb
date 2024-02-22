@@ -8,7 +8,7 @@ describe RubyForms::API do
   end
 
   describe 'Swagger documentation' do
-    context 'with root' do
+    context 'when requesting root documentation path' do
       let(:json) { JSON.parse(last_response.body, symbolize_names: true) }
 
       before { get '/api/swagger_doc' }
@@ -24,13 +24,13 @@ describe RubyForms::API do
       end
     end
 
-    context 'with api' do
+    context 'when requesting api endpoints' do
       before { get '/api/swagger_doc' }
 
       it { expect(last_response.status).to eq(200) }
     end
 
-    context 'with polls api' do
+    context 'when requesting poll endpoints' do
       let(:apis) { JSON.parse(last_response.body, symbolize_names: true) }
 
       let(:poll_docs) { apis[:paths][:'/api/polls'] }
