@@ -20,6 +20,7 @@ gem 'rackup'
 gem 'rake'
 
 group :development do
+  gem 'overcommit'
   gem 'pry'
   gem 'sqlite3'
 end
