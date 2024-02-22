@@ -48,7 +48,7 @@ describe RubyForms::API do
       it { expect(last_response.status).to eq(200) }
 
       it 'exposes poll documentation' do
-        expect(@polls_doc.keys.length).to eql 2
+        expect(@polls_doc.keys.length).to be 2
       end
 
       it 'exposes poll\'s GET and POST' do
@@ -57,9 +57,9 @@ describe RubyForms::API do
       end
 
       it 'exposes poll\'s parameters' do
-        parameters = @polls_doc[:post][:parameters].map do |parameter|
+        parameters = @polls_doc[:post][:parameters].to_h do |parameter|
           [parameter[:name], parameter[:description]]
-        end.to_h
+        end
 
         expect(parameters).to eq(poll_params)
       end

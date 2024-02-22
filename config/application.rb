@@ -14,7 +14,7 @@ begin
   if File.exist?(yaml)
     require 'erb'
     config = HashWithIndifferentAccess.new(
-      YAML.safe_load(ERB.new(IO.read(yaml)).result, aliases: true)
+      YAML.safe_load(ERB.new(File.read(yaml)).result, aliases: true)
     )
   elsif ENV['DATABASE']
     nil

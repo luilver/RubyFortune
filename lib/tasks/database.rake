@@ -5,7 +5,7 @@ namespace :db do
     Bundler.require
     require './config/environment'
 
-    FileUtils.rm("db/#{ENV['RACK_ENV']}.db")
+    FileUtils.rm("db/#{ENV.fetch('RACK_ENV', nil)}.db")
   end
 
   desc 'migrate your database'
@@ -19,7 +19,7 @@ namespace :db do
 
   desc 'reset your database'
   task :reset do
-    ::Rake::Task['db:drop'].execute
-    ::Rake::Task['db:migrate'].execute
+    Rake::Task['db:drop'].execute
+    Rake::Task['db:migrate'].execute
   end
 end

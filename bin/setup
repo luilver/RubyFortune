@@ -10,8 +10,8 @@ APP_ROOT = File.expand_path('..', __dir__)
 # database file
 db_file = 'config/database.yml'
 
-def system!(*args)
-  system(*args, exception: true)
+def system!(*)
+  system(*, exception: true)
 end
 
 FileUtils.chdir APP_ROOT do

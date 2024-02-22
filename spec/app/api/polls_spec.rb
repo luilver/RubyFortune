@@ -9,13 +9,13 @@ describe RubyForms::Polls do
 
   describe 'Factories' do
     it 'has a valid factory' do
-      expect(FactoryBot.build(:poll)).to be_valid
+      expect(build(:poll)).to be_valid
     end
   end
 
   describe 'Validations' do
     it 'is invalid without a title' do
-      expect(FactoryBot.build(:poll, title: nil)).to_not be_valid
+      expect(build(:poll, title: nil)).not_to be_valid
     end
   end
 
@@ -31,7 +31,7 @@ describe RubyForms::Polls do
     end
 
     context 'when there are polls' do
-      let!(:poll) { 3.times { FactoryBot.create(:poll, :with_options) } }
+      let!(:poll) { create_list(:poll, 3, :with_options) }
 
       before { get 'api/polls' }
 

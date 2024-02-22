@@ -21,12 +21,14 @@ RSpec.configure do |config|
   config.expect_with :rspec
   config.raise_errors_for_deprecations!
 
+  config.include FactoryBot::Syntax::Methods
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.around(:each) do |example|
+  config.around do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
