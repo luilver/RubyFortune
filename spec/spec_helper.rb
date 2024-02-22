@@ -13,6 +13,15 @@ require File.expand_path('../config/environment', __dir__)
 
 Dir[File.expand_path('factories/*.rb', __dir__)].each { |f| require f }
 
+require 'simplecov'
+
+SimpleCov.minimum_coverage 85
+SimpleCov.start do
+  add_filter 'config'
+  add_filter 'spec'
+  add_filter 'vendor'
+end
+
 RSpec.configure do |config|
   config.color = true
   config.formatter = :documentation

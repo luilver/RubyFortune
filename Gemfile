@@ -33,4 +33,5 @@ group :test do
   gem 'rubocop-factory_bot'
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
+  gem 'simplecov'
 end
