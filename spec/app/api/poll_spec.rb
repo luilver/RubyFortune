@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe RubyForms::Polls do
+describe Poll do
   include Rack::Test::Methods
 
   def app
@@ -31,9 +31,10 @@ describe RubyForms::Polls do
     end
 
     context 'when there are polls' do
-      let!(:poll) { create_list(:poll, 3, :with_options) }
-
-      before { get 'api/polls' }
+      before do
+        create_list(:poll, 3, :with_options)
+        get 'api/polls'
+      end
 
       it { expect(last_response.status).to eq(200) }
 
@@ -65,7 +66,7 @@ describe RubyForms::Polls do
       end
 
       it 'increases Poll\'s count in 1' do
-        expect(Poll.count).to be(1)
+        expect(described_class.count).to be(1)
       end
     end
   end

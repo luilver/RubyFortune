@@ -9,6 +9,7 @@ require 'rubygems'
 
 RSpec::Core::RakeTask.new(:spec)
 
+desc 'load environment'
 task :environment do
   ENV['RACK_ENV'] ||= 'development'
   require File.expand_path('config/environment', __dir__)

@@ -8,30 +8,33 @@ describe RubyForms::API do
   end
 
   describe 'Swagger documentation' do
-    context 'root' do
-      before do
-        get '/api/swagger_doc'
-        @json = JSON.parse(last_response.body, symbolize_names: true)
-      end
+    context 'with root' do
+      let(:json) { JSON.parse(last_response.body, symbolize_names: true) }
+
+      before { get '/api/swagger_doc' }
 
       it { expect(last_response.status).to eq(200) }
 
       it 'exposes api version' do
-        expect(@json[:info][:version]).to eq('0.0.2')
+        expect(json[:info][:version]).to eq('0.0.2')
       end
 
       it 'exposes polls api path' do
-        expect(@json[:paths].size).to eq 1
+        expect(json[:paths].size).to eq 1
       end
     end
 
-    context 'api' do
+    context 'with api' do
       before { get '/api/swagger_doc' }
 
       it { expect(last_response.status).to eq(200) }
     end
 
-    context 'polls api' do
+    context 'with polls api' do
+      let(:apis) { JSON.parse(last_response.body, symbolize_names: true) }
+
+      let(:poll_docs) { apis[:paths][:'/api/polls'] }
+
       let(:poll_params) do
         {
           'title' => 'title of the poll',
@@ -39,25 +42,24 @@ describe RubyForms::API do
         }
       end
 
-      before do
-        get '/api/swagger_doc/polls'
-        apis = JSON.parse(last_response.body, symbolize_names: true)
-        @polls_doc = apis[:paths][:'/api/polls']
-      end
+      before { get '/api/swagger_doc/polls' }
 
       it { expect(last_response.status).to eq(200) }
 
       it 'exposes poll documentation' do
-        expect(@polls_doc.keys.length).to be 2
+        expect(poll_docs.keys.length).to be 2
       end
 
-      it 'exposes poll\'s GET and POST' do
-        expect(@polls_doc).to include :get
-        expect(@polls_doc).to include :post
+      it 'exposes poll\'s GET' do
+        expect(poll_docs).to include :get
+      end
+
+      it 'exposes poll\'s POST' do
+        expect(poll_docs).to include :post
       end
 
       it 'exposes poll\'s parameters' do
-        parameters = @polls_doc[:post][:parameters].to_h do |parameter|
+        parameters = poll_docs[:post][:parameters].to_h do |parameter|
           [parameter[:name], parameter[:description]]
         end
 
