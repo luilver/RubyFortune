@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog][], and this project adheres to
 ## [Unreleased]
 ### Add
 - Posthog support
+### Change
+- with in favor of when within swagger specs
 ### Remove
 - app scope under spec dir
 
