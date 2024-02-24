@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog][], and this project adheres to
 
 ## [Unreleased]
 ### Add
+- Frontend PWA or Widget
 - Posthog support
 - Support for common HTML fields and field types
   - Text
