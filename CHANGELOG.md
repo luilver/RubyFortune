@@ -7,6 +7,17 @@ The format is based on [Keep a Changelog][], and this project adheres to
 ## [Unreleased]
 ### Add
 - Posthog support
+- Support for common HTML fields and field types
+  - Text
+  - Password
+  - Email
+  - Number
+  - Checkbox
+  - Radio Button
+  - Textarea
+  - Select Dropdown
+  - Date
+  - File
 ### Change
 - with in favor of when within swagger specs
 ### Remove
