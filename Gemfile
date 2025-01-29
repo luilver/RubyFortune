@@ -13,7 +13,7 @@ gem 'grape-swagger'
 gem 'grape-swagger-entity'
 
 gem 'psych', '~> 5.1.0'
-gem 'puma', '~> 6.4.0'
+gem 'puma', '~> 6.6.0'
 
 gem 'rack'
 gem 'rackup'
