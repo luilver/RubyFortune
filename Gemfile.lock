@@ -30,6 +30,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.6.0)
     diff-lcs (1.5.1)
     docile (1.4.0)
     drb (2.2.0)
@@ -97,7 +98,8 @@ GEM
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    psych (5.1.2)
+    psych (5.5.0)
+      date
       stringio
     puma (6.4.2)
       nio4r (~> 2.0)
@@ -161,7 +163,7 @@ GEM
     sqlite3 (1.7.2)
       mini_portile2 (~> 2.8.0)
     sqlite3 (1.7.2-arm64-darwin)
-    stringio (3.1.0)
+    stringio (3.2.0)
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -186,7 +188,7 @@ DEPENDENCIES
   grape-swagger-entity
   overcommit
   pry
-  psych (~> 5.1.0)
+  psych (~> 5.5.0)
   puma (~> 6.4.0)
   rack
   rackup
